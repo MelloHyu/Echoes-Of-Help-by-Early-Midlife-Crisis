@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
         {
             lastDir = moveInput;
         }
-        playerRB.velocity = moveInput * movementSpeed;
-        isRunning = playerRB.velocity.sqrMagnitude > 0;
+        playerRB.linearVelocity = moveInput * movementSpeed;
+        isRunning = playerRB.linearVelocity.sqrMagnitude > 0;
         Animate();
     }
 

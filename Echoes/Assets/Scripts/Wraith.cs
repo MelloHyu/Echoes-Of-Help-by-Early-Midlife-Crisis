@@ -89,18 +89,18 @@ public class Wraith : MonoBehaviour
         if(target && chaseSequenceBegan)
         {
            
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
             if(moveDirection.sqrMagnitude>0)
             {
                 animationLastIdleDirection = moveDirection;
             }
-            isRunning = rb.velocity.sqrMagnitude > 0;
+            isRunning = rb.linearVelocity.sqrMagnitude > 0;
 
         }
         else
         {
-            rb.velocity = new Vector2(idlePosition.x, idlePosition.y) * moveSpeed;
-            isRunning = rb.velocity.sqrMagnitude > 0;
+            rb.linearVelocity = new Vector2(idlePosition.x, idlePosition.y) * moveSpeed;
+            isRunning = rb.linearVelocity.sqrMagnitude > 0;
         }
        
         Animate();
